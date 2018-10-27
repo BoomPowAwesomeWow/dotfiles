@@ -1,0 +1,50 @@
+mkdir ex0
+rename ex1_monograma
+rename ex0_cp
+shell vim trabalho de grupo.txt
+open_with evince
+open_with vim
+rename Listas.sb3
+rename pp_resumo.tex
+shell vim preprojecto.tex
+rename preproject.tex
+rename FerrazXX.PDF
+rename Endo07pdf
+rename 807-2675-1-P.pdf
+rename Menezes04.pdf
+rename Filipe15.pdf
+rename Standing70.pdf
+rename FerrazXX.pdf
+open_with 
+rename Endo07.pdf
+rename i3_manual.pdf
+mkdir Trabalho_de_grupo
+rename fcfae7a3a51077c5808be4fdd2ad622a.jpg
+rename pesquisa_11.jpg
+open_with inkscape
+rename Desktop
+shell vim index.html
+x
+shell g++ hello_world.cpp
+shell vim .xinit
+flat 
+flat 2
+flat 0
+open_with okular
+rename report.tex
+rename letter.tex
+rename beamer.tex
+shell latex beamer.tex
+shell pdflatex beamer.tex
+rename WatchList.txt
+shell v hello_world.cpp
+shell vim hello_world.cpp
+shell unzip powder-93.3-lin64.zip
+
+rename trabalho.txt
+bulkrename 
+rename The-Manga-guide-to-Databases.pdf
+rename The-Manga-Guide-to-Calculus.pdf
+delete
+mkdir Trabalho de grupo
+mkdir pesquisa
