@@ -27,8 +27,8 @@ alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio
 
 # Tex
-alias Txa="cp ~/Documents/LaTeX/article.tex newfile.tex"
-alias Txs="cp ~/Documents/LaTeX/beamer.tex newfile.tex"
-alias Txl="cp ~/Documents/LaTeX/letter.tex newfile.tex"
-alias Txr="cp ~/Documents/LaTeX/letter.tex newfile.tex"
-alias bib="cp ~/Documents/LaTeX/uni.bib newfile.tex"
+alias Txa="cp ~/Template/LaTeX/article.tex newfile.tex"
+alias Txs="cp ~/Template/LaTeX/beamer.tex newfile.tex"
+alias Txl="cp ~/Template/LaTeX/letter.tex newfile.tex"
+alias Txr="cp ~/Template/LaTeX/letter.tex newfile.tex"
+alias bib="cp ~/Template/LaTeX/uni.bib newfile.tex"
