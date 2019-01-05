@@ -1,24 +1,22 @@
 "Basic Configs 
-	filetype plugin on
-	syntax on
-	set encoding=utf-8
-	set number
-	set relativenumber
+filetype plugin on
+syntax on
+set encoding=utf-8
+set number
+set relativenumber
 
-	call plug#begin('~/.vim/plugged')
-
+call plug#begin('~/.vim/plugged')
 	" Centering Writing
 	Plug 'junegunn/goyo.vim'
 	" Tree Viewing Of Files
-       	Plug 'scrooloose/nerdtree'
-
-	call plug#end()
+	Plug 'scrooloose/nerdtree'
+call plug#end()
 
 """ Filetype Independent
 
-	inoremap ,, <Esc>/<;;><Enter>"_c4l
-	map <C-n> :NERDTreeToggle<CR>
-	map ,,w :Goyo<CR>
+inoremap ,, <Esc>/<;;><Enter>"_c4l
+map <C-n> :NERDTreeToggle<CR>
+map ,,w :Goyo<CR>
 
 """ Filetype dependent
 
