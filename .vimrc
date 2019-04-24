@@ -1,33 +1,53 @@
-"Basic Configs 
-filetype plugin on
-syntax on
-set encoding=utf-8
-set number
-set relativenumber
+"
+"	My .vimrc
 
+" Plugged
 call plug#begin('~/.vim/plugged')
 	" Centering Writing
 	Plug 'junegunn/goyo.vim'
 	" Tree Viewing Of Files
 	Plug 'scrooloose/nerdtree'
+	" YouCompleteMe
+	Plug 'Valloric/YouCompleteMe'
+	" Statusnar
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-""" Filetype Independent
+"Basic Configs 
+colorscheme molokai
 
+filetype plugin on
+filetype indent on
+syntax enable
+set encoding=utf-8
+set number
+set noshowcmd
+set wildmenu
+
+"" Tabs & Spaces
+set tabstop=4
+set softtabstop=4
+
+" Movement Indendent of LineWrap
+noremap j gj
+noremap k gk
+noremap l gl
+noremap h gh
+
+" filetype independent
 inoremap ,, <Esc>/<;;><Enter>"_c4l
 map <C-n> :NERDTreeToggle<CR>
 map ,,w :Goyo<CR>
 
-""" Filetype dependent
-
-" .py file
-	"autocmd FileType py inoremap
+" filetype dependent
 
 " Latex
+	autocmd Filetype tex set relativenumber
 	autocmd FileType tex map <F8> :w %<CR> :!pdflatex %<CR>
-	autocmd FileType tex map <F7> :setlocal spell! spelllang=pt_pt<CR> 	
+	autocmd FileType tex map <F7> :setlocal spell! spelllang=pt_pt<CR>
 	autocmd FileType tex inoremap <F5> <Esc>]sz=
-
+	
 	autocmd FileType tex inoremap ,b \textbf{}<;;><Esc>F}i
 	autocmd FileType tex inoremap ,it \textit{}<;;><Esc>F}i
 	autocmd FileType tex inoremap ,em \emph{}<;;><Esc>F}i
@@ -40,8 +60,3 @@ map ,,w :Goyo<CR>
 	autocmd FileType tex inoremap ,ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><;;><Esc>3kA\item<Space>
 	autocmd FileType tex inoremap ,ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><;;><Esc>3kA\item<Space>
 	autocmd FileType tex inoremap ,li <Enter>\item<Space>
-
-" BIB
-	autocmd FileType bib inoremap ,a @article{,<Enter><Tab>title<Space>=<Space>"<;;>",<Enter><Tab>author<Space>=<Space>"<;;>",<Enter><Tab>year<Space>=<Space>"<;;>",<Enter><Tab>url<Space>=<Space>"<;;>",<Enter>}<Enter><;;><Esc>6kf,i
-	autocmd FileType bib inoremap ,b @book{,<Enter><Tab>title<Space>=<Space>"<;;>",<Enter><Tab>author<Space>=<Space>"<;;>",<Enter><Tab>publisher<Space>=<Space>"<;;>",<Enter><Tab>date<Space>=<Space>"<;;>",<Enter><Tab>keywords<Space>=<Space>"<;;>",<Enter>}<Enter><;;><Esc>7kf,i
-

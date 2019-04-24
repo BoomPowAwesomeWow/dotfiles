@@ -6,5 +6,6 @@ My .files for Linux Application. This saves my files as a backup and alows more 
 
 ## VIM plugin list
 
+- Airline Status Bar
 - Goyo
 - NERDlist 
