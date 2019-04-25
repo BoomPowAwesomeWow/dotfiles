@@ -15,7 +15,7 @@ alias ls='ls -hN --color=auto --group-directories-first'
 alias grep="grep --color=auto" # Color grep - highlight desired sequence.
 
 alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax highlighting.
-alias rain="cmatrix -bs"
+alias rain="cmatrix -bs -C Blue"
 
 # General aliases
 alias yt="youtube-dl --add-metadata -ic" # Download video link

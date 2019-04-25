@@ -29,12 +29,6 @@ set wildmenu
 set tabstop=4
 set softtabstop=4
 
-" Movement Indendent of LineWrap
-noremap j gj
-noremap k gk
-noremap l gl
-noremap h gh
-
 " filetype independent
 inoremap ,, <Esc>/<;;><Enter>"_c4l
 map <C-n> :NERDTreeToggle<CR>
