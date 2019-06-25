@@ -16,11 +16,9 @@ alias grep="grep --color=auto" # Color grep - highlight desired sequence.
 alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax highlighting.
 
 alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax highlighting.
-alias rain="cmatrix -bs -C Blue"
+alias rain="cmatrix -b -C Blue"
 
 alias wtr="curl wttr.in"
-alias srturl="curl -s http://tinyurl.com/api-create.php?"
-alias dict="curl 'dict://dict.org/d:operating system'"
 
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio

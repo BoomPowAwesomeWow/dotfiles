@@ -1,5 +1,6 @@
 "
 "	My .vimrc
+"
 
 " Plugged
 call plug#begin('~/.vim/plugged')
@@ -14,9 +15,10 @@ call plug#begin('~/.vim/plugged')
 	Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-"Basic Configs 
-colorscheme molokai
+" Colorscheme
+colorscheme koehler
 
+"Basic Configs 
 filetype plugin on
 filetype indent on
 syntax enable
@@ -25,9 +27,11 @@ set number
 set noshowcmd
 set wildmenu
 
-"" Tabs & Spaces
+" Tab Config
 set tabstop=4
+set shiftwidth=4
 set softtabstop=4
+set expandtab 
 
 " filetype independent
 inoremap ,, <Esc>/<;;><Enter>"_c4l
@@ -36,7 +40,7 @@ map ,,w :Goyo<CR>
 
 " filetype dependent
 
-" Latex
+"" Latex
 	autocmd Filetype tex set relativenumber
 	autocmd FileType tex map <F8> :w %<CR> :!pdflatex %<CR>
 	autocmd FileType tex map <F7> :setlocal spell! spelllang=pt_pt<CR>
