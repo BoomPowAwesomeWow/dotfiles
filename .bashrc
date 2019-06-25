@@ -19,8 +19,6 @@ alias ccat="highlight --out-format=ansi" # Color cat - print file with syntax hi
 alias rain="cmatrix -bs -C Blue"
 
 alias wtr="curl wttr.in"
-alias srturl="curl -s http://tinyurl.com/api-create.php?"
-alias dict="curl 'dict://dict.org/d:operating system'"
 
 alias yt="youtube-dl --add-metadata -ic" # Download video link
 alias yta="yt -x -f bestaudio/best" # Download only audio

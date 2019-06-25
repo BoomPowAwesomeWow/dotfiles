@@ -15,8 +15,7 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 "Basic Configs 
-colorscheme molokai
-
+colorscheme ron
 filetype plugin on
 filetype indent on
 syntax enable
