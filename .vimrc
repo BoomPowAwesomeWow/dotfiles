@@ -19,6 +19,8 @@ call plug#end()
 colorscheme koehler
 
 "Basic Configs 
+colorscheme molokai
+
 filetype plugin on
 filetype indent on
 syntax enable
