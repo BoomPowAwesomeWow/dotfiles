@@ -4,32 +4,23 @@
 "
 " ***********************
 
-" Install Plug.vim if not already in autoload dir
-if empty(glob('~/.config/nvim/autoload/plug.vim'))
-  silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-
 " Install Plugins
 call plug#begin('~/.config/nvim/plugged')
+    "Basics
+    Plug 'junegunn/vim-plug'
     Plug 'junegunn/goyo.vim'
-
-    Plug 'scrooloose/nerdtree'
-
+    Plug 'junegunn/limelight.vim'
+    Plug 'frazrepo/vim-rainbow'
+    "Costumization
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
-    
-    " Autocompletion engine
-    Plug 'Shougo/deoplete.nvim', {'do': ':UpdateRemotePlugins'}
-    " Python
-    Plug 'deoplete-plugins/deoplete-jedi', {'for': 'python'}
-    " Javascript
-	Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-
-    Plug 'Yggdroot/indentLine'
-    Plug 'dracula/vim', { 'as': 'dracula' }
-
+    Plug 'arcticicestudio/nord-vim'
+    "File managers
+    Plug 'scrooloose/nerdtree'
+    Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+    Plug 'ryanoasis/vim-devicons'
+    "Misc
+    Plugin 'ap/vim-css-color'
 call plug#end()
 
 "Basic Configs 
