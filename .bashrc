@@ -2,7 +2,10 @@
 
 # Username Color
 DEFAULT=$PS1
-PS1="\[\033[01;32m\]Desktop@:\[\033[01;34m\]\W\[\033[0;00m\]\$ "
+BOLD="\[$(tput bold)\]"
+RESET="\[$(tput sgr0)\]"
+BLUE="\[$(tput setaf 81)\]"
+PS1="${BOLD}${BLUE}\W ${RESET}${BOLD}$:${RESET} "
 
 # Default Editor
 export EDITOR=nvim
@@ -11,6 +14,9 @@ alias vim=nvim
 
 # General Variables
 BIB="~/Templates/ref.bib"
+
+
+alias bye='shutdown now'
 
 #Color Aliases
 alias ls='ls -1 --color=auto --group-directories-first'

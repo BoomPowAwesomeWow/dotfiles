@@ -1,0 +1,78 @@
+#!/usr/bin/env python3 
+import requests
+import json
+import sys
+import re
+
+from os import getcwd, mkdir, path
+from time import sleep
+
+def getPosts(URL):
+
+    threadFile = json.loads(requests.get(URL, allow_redirects=True).text)['posts']
+    posts = []
+
+    for i in range(len(threadFile)):
+        try:
+            if threadFile[i]['filename']:
+                posts.append(threadFile[i])
+        finally:
+            pass
+
+    return posts
+
+
+def getImage(board, ind, filename, ext, directory):
+
+    url = 'https://i.4cdn.org/' + board + '/' + str(ind) + ext
+    newfile = requests.get(url)
+    
+
+    if not(path.exists(directory + filename + ext)):
+        print('Downloading:\t' + filename + ext)
+        with open(directory + filename + ext, 'wb') as f:
+            f.write(newfile.content)
+            sleep(1.1)
+        return 0
+    else:
+        return -1
+
+
+def parseURL(url):
+     
+    if '4channel' in url:
+        r = re.compile(r'https:\/\/boards.4channel.org\/(\w+)\/thread\/(\d+)')
+    elif '4chan' in url:
+        r = re.compile(r'https:\/\/boards.4chan.org\/(\w+)\/thread\/(\d+)')
+
+    values = r.match(url)
+    board = values.group(1)
+    thread = values.group(2)
+
+    return board, thread
+
+
+def main():
+
+    cwd = getcwd()
+
+    if len(sys.argv) == 1:
+        print('No URL Given')
+        return -1
+    elif len(sys.argv) == 2:
+        BOARD, THREAD = parseURL(sys.argv[1])
+
+    posts = getPosts('https://a.4cdn.org/' + BOARD + '/thread/' + THREAD + '.json')
+
+    try:
+        mkdir(posts[0]['semantic_url'])
+    except FileExistsError:
+        print('The diretory already exists')
+
+    targetd = cwd + '/' + posts[0]['semantic_url'] + '/'
+
+    for i in posts:
+        getImage(BOARD, i['tim'], i['filename'], i['ext'], targetd)
+
+if __name__ == "__main__":
+   main() 
